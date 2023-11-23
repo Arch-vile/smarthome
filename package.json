@@ -1,0 +1,22 @@
+{
+  "name": "smarthome",
+  "version": "1.0.0",
+  "description": "Trying to make magic with Ikea Trådfri + Alexa + ChatGPT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arch-vile/smarthome.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Arch-vile/smarthome/issues"
+  },
+  "homepage": "https://github.com/Arch-vile/smarthome#readme",
+  "devDependencies": {
+    "typescript": "^5.3.2"
+  }
+}
