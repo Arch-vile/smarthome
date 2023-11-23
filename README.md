@@ -9,7 +9,7 @@ We'll use Alaxa as our text to speech provider. User commands will be sent to cu
 
 Raspberry PI will communicate with Lambdas and control the lightning through Ikea Trådfri gateway. We'll first try building the system so that there are no incoming calls to the PI to avoid all hazzle with static IP addresses. As a downside PI needs to keep polling the new instructions quite often (e.g. once per second).
 
-<img width="1020" alt="image" src="https://github.com/Arch-vile/smarthome/assets/2006859/6c04c228-a0bf-4495-81cf-2171408c3eb2">
+<img width="1020" alt="image" src="https://github.com/Arch-vile/smarthome/assets/2006859/c8ce2120-dd8c-4474-927f-db8cfe2ebce7">
 
 
 ## How can we use ChatGPT for Smart Home
