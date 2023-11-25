@@ -4,6 +4,7 @@
   "description": "Trying to make magic with Ikea Trådfri + Alexa + ChatGPT",
   "main": "index.js",
   "scripts": {
+    "start": "ts-node index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,5 +19,9 @@
   "homepage": "https://github.com/Arch-vile/smarthome#readme",
   "devDependencies": {
     "typescript": "^5.3.2"
+  },
+  "dependencies": {
+    "node-tradfri-client": "^3.2.0",
+    "ts-node": "^10.9.1"
   }
 }
