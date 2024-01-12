@@ -1,18 +1,23 @@
 # smarthome
 
-TODO: Update the design based on the decision to screw Alexa (see on the decision log)
-
-Trying to make magic with Ikea Trådfri + Alexa + ChatGPT
+Trying to make magic with Ikea Trådfri + RaspberryPI + ChatGPT
 
 ## The big picture
 
 We want to control our smart home lights with speech.
 
-We'll use Alaxa as our text to speech provider. User commands will be sent to custom Alexa skill that will forward those to a Lambda function. Lambda will use ChatGPT APIs to produce new state of lightning from user commands and current state.
+The big picture
+- Keyword detector: Responsible for recording audio and detecting keywords. Will send audio between <start> and <end> keywords to be processed.
+- AWS Transcribe: Speech to text (later: instructions) and sending for processing.
+- AWS lambda (logic): Sends current state of devices and the instructions for LLM
+- ChatGPT API: LLM to produce new device state from current state and instructions
+- DynamoDB: store the current and the new state to be set
+- Light Control: Runs scheduled tasks to send current state of devices to DynamoDB and read the commands to execute and to send to Tradfri
+- AWS lambda (commands): Reading old and new state and determine the required alterations to device states.
 
 Raspberry PI will communicate with Lambdas and control the lightning through Ikea Trådfri gateway. We'll first try building the system so that there are no incoming calls to the PI to avoid all hazzle with static IP addresses. As a downside PI needs to keep polling the new instructions quite often (e.g. once per second).
 
-<img width="1020" alt="image" src="https://github.com/Arch-vile/smarthome/assets/2006859/c8ce2120-dd8c-4474-927f-db8cfe2ebce7">
+<img width="937" alt="image" src="https://github.com/Arch-vile/smarthome/assets/2006859/52eb6ff7-1520-44ab-99f0-070f01f81bf9">
 
 
 ## How can we use ChatGPT for Smart Home
